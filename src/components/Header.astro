@@ -1,0 +1,61 @@
+---
+import HeaderLink from "@/components/HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<div class="header-hero">
+  <header class="app-header">
+    <div class="app-header__container">
+      <!--heaqder logo-->
+      <div class="section" id="left">
+        <div class="widget Header" id="Header1">
+          <!--<div class="app-logo"> <a class="app-logo__img" href="index.html"> <img alt="AnimeKoi" src=""> </a>
+                    </div>-->
+          <h2 data-pagefind-ignore>
+            <HeaderLink href="/">{SITE_TITLE} </HeaderLink>
+          </h2>
+          <div class="app-header__toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+      <!--//heaqder logo-->
+      <!--izq header-->
+      <div class="krs-flex is-wrap is-middle section" id="right">
+        <!-- header link -->
+        <div class="widget PageList" id="PageList1">
+          <nav class="app-menu">
+            <HeaderLink href="/game" title="Games">Juegos</HeaderLink>
+          </nav>
+        </div>
+        <!--header link --><!--buscador-->
+         <div transition:persist id="search"></div>
+        <!--buscador-->
+      </div><!--izq header-->
+    </div>
+  </header>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    //@ts-ignore
+    new PagefindUI({
+      element: "#search",
+      debounceTimeoutMs: 500,
+      resetStyles: false,
+      showEmptyFilters: false,
+      excerptLength: 15,
+      showImages: false,
+      showSubResults: true,
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    var e = document.querySelector(".app-header__toggle") as HTMLElement,
+      t = document.querySelector(".app-header #right") as HTMLElement;
+    e.addEventListener("click", function () {
+      t.classList.toggle("actived");
+    });
+  });
+</script>

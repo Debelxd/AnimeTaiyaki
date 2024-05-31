@@ -1,0 +1,78 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+
+type Props = CollectionEntry<"games">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<MainLayout description={description}>
+  <div>
+    <article >
+      <div class="hero-image">
+        <br>
+        {heroImage && <img width={520} height={520} src={heroImage} alt="" />}
+      </div>
+      <div class="prose">
+        <div class="title">
+          <div class="date">
+            <h1>{title}</h1>
+            <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <div class="last-updated-on">
+                   Última actualización el <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+          </div>
+          <hr />
+        </div>
+        <slot />
+      </div>
+    </article>
+  </div>
+</MainLayout>
+<style>
+  main {
+    width: calc(100% - 2em);
+    margin: 0;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 3em 1em;
+  }
+  .hero-image {
+    width: 100%;
+  }
+  .hero-image img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+  .prose {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em;
+    color: rgb(var(--gray-dark));
+  }
+  .title {
+    margin-bottom: 1em;
+    padding: 1em 0;
+    text-align: center;
+    line-height: 1;
+  }
+  .title h1 {
+    margin: 0 0 0.5em 0;
+  }
+  .date {
+    margin-bottom: 0.5em;
+    color: rgb(var(--gray));
+  }
+  .last-updated-on {
+    font-style: italic;
+  }
+</style>
