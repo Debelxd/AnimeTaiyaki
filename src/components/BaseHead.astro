@@ -17,7 +17,7 @@ const { title, description, image = "/public/4.webp" } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta content="website" property="og:type" />
-<meta content="width=device-width,initial-scale=1" name="viewport" />
+<meta name="viewport" content="width=device-width,initial-scale=1"  />
 <link rel="icon" type="image/svg+xml" href="/favicon-dark-192.png" />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:title" content={title} />
@@ -26,8 +26,8 @@ const { title, description, image = "/public/4.webp" } = Astro.props;
 <meta property='og:url' content='https://animetaiyaki.pages.dev/' />
 <meta property="og:site_name" content="AnimeTaiyaki" />
 <meta property="og:locale" content="es_ES" />
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
+<meta name="robots" content="index" />
+<meta name="googlebot" content="index" />
 
 <!-- Font preloads -->
 <link
@@ -47,13 +47,14 @@ const { title, description, image = "/public/4.webp" } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
-<link rel='canonical' href='index.htm' />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta property="description" content={description} />
+<meta name="Author" lang="es" content="Debelxd" />
+<meta name="keywords" content="Descargar ANIME por Mega y Mediafire ✅ Sub español ✅ HD ✅ 1 solo link ✅ Todos los capitulos en carpeta contenedora ✅ " />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
