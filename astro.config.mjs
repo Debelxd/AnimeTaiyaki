@@ -5,6 +5,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://animetaiyaki.netlify.app',
+  site: 'https://animetaiyaki.pages.dev/',
   integrations: [mdx(), sitemap()]
 });

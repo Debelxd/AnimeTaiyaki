@@ -4,13 +4,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
+
+
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} data-pagefind-ignore />
-    <ViewTransitions/>
+    <BaseHead
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
+      data-pagefind-ignore
+    />
+    <ViewTransitions />
   </head>
   <body>
     <Header />

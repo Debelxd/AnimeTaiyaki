@@ -11,27 +11,23 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/Loves Sweet Garnish.webp' } = Astro.props;
+const { title, description, image = '/public/4.webp' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<meta content="website" property="og:type" />
+<meta content='width=device-width,initial-scale=1' name='viewport' />
 <link rel="icon" type="image/svg+xml" href="/favicon-dark-192.png" />
 <meta name="generator" content={Astro.generator} />
-<meta name="keywords" content="novelas visuales para pc y mucho mas " />
-
 <meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:site_name" content="AnimeTaiyaki" />
-<meta property="og:type" content="website" />
 <meta property="og:locale" content="es_ES" />
-
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
-
 
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
@@ -70,4 +66,18 @@ const { title, description, image = '/Loves Sweet Garnish.webp' } = Astro.props;
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
 <script src="/pagefind/pagefind-ui.js" is:inline>
+</script>
+<!-- Google tag (gtag.js) -->
+ <script
+ is:inline
+ async
+ src="https://www.googletagmanager.com/gtag/js?id=G-TDKCGWM7LZ"></script>
+<script is:inline>
+ window.dataLayer = window.dataLayer || []
+ function gtag() {
+   dataLayer.push(arguments)
+ }
+ gtag('js', new Date())
+
+ gtag('config', 'G-TDKCGWM7LZ')
 </script>
