@@ -306,6 +306,12 @@ h1 {
 	margin: .67em 0
 }
 
+h2 {
+	font-size: 1.4em;
+	margin: .67em 0;
+	color:#767781;
+}
+
 hr {
 	box-sizing: content-box;
 	height: 0;
